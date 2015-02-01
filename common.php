@@ -8,7 +8,7 @@ function database_config() {
 }
 
 function database() {
-        $cfg = database_config();
+    $cfg = database_config();
 	$db_url = "mysql:host=" . $cfg['host'] . ";dbname=" . $cfg['database'];
 	$db = new PDO($db_url, $cfg['login'], $cfg['password'], array(
 		PDO::ATTR_PERSISTENT => true,
