@@ -145,6 +145,9 @@
 			.intro-text {
 			text-align: left;
 			}
+            #captcha_code {
+                color: #000000;
+            }
 	</style>
 	
     <!-- IE8 support for HTML5 elements and media queries -->
@@ -381,6 +384,8 @@
 					  <option value="Mrs">Mrs</option>
 					  <option value="Miss">Miss</option>
 					  <option value="Mr">Mr</option>
+                      <option value="Mr">Dr</option>
+                      <option value="Mr">Prof</option>
 					</select>
 				  </div>
 				</div>
@@ -405,12 +410,38 @@
 
 				<!-- Text input-->
 				<div class="form-group">
-				<label class="col-md-4 control-label" for="email">email address</label>  
+				<label class="col-md-4 control-label" for="email">Email address</label>
 				<div class="col-md-4">
 				<input id="email" name="email" placeholder="your.name@yourdomain.com" class="form-control input-md" required="" type="text" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}">
 				<span class="help-block">Please enter your Email address</span>  
 				</div>
 				</div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="service">Service</label>
+                    <div class="col-md-4">
+                        <select id="service" name="service" class="form-control">
+                            <option></option>
+                            <option value="researcher">Researcher -- free</option>
+                            <option value="inst_month">Institution -- £60 per month</option>
+                            <option value="inst_ann">Institution -- £600 per year</option>
+                            <option value="enterprise">Enterprise -- quote on request</option>
+                        </select>
+                        <span class="help-block">Intended service - you will not be charged at this point.</span>
+                    </div>
+                </div>
+
+                <!-- CAPTCHA -->
+                <div class="form-group">
+                <label class="col-md-4 control-label" for="email">captcha</label>
+                <div class="col-md-4">
+                <?php
+                    require_once 'securimage/securimage.php';
+                    echo Securimage::getCaptchaHtml();
+                ?>
+                </div>
+                </div>
 
 				<!-- Button -->
 				<div class="form-group">
