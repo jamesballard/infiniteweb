@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link href="/docs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link rel="SHORTCUT ICON" href="/docs/img/favicon.ico?v=2" />
+    <link rel="SHORTCUT ICON" href="/docs/img/favicon.ico?v=3" />
 	<style>
 			body{padding-top:20px}
 
