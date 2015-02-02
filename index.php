@@ -145,9 +145,6 @@
 			.intro-text {
 			text-align: left;
 			}
-            #captcha_code {
-                color: #000000;
-            }
 	</style>
 	
     <!-- IE8 support for HTML5 elements and media queries -->
@@ -435,7 +432,7 @@
 
                 <!-- CAPTCHA -->
                 <div class="form-group">
-                <label class="col-md-4 control-label" for="email">captcha</label>
+                <label class="col-md-4 control-label" for="g-recaptcha"></label>
                 <div class="col-md-4">
                     <div class="g-recaptcha" data-sitekey="6LdbWQETAAAAADZ3LSIia954aDDrF2ha7ZHhHzvK"></div>
                 </div>
