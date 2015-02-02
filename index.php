@@ -485,10 +485,20 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>James Ballard, founder of Infinite Rooms, started the project in 2011 as a dissertation at King's College London seeking to understand engagement with online learning environments. The data model supported an analysis of activity log data grounded in Activity Theory and Learning Design to produce several insights.</p><p>
-                </p></div>
+                    <p>Infinite rooms is a startup company with the goal of promoting learner engagement through
+                        action driven metrics:
+                        <ul>
+                        <li>What student actions are associated with more learning?</li>
+                        <li>How might student activity help identify and promote effective teaching practices?</li>
+                        <li>How do you assess effectiveness of learning technologies?</li>
+                    </ul>
+                    </p>
+                </div>
                 <div class="col-lg-4">
-                    <p>Infinite Rooms was founded as a company in 2012 to deploy the model as a real-time application promoting engagement. The company is a small team with over 25 years of experience in educational technology who value both the educational practice and technological innovation needed to understand learning data.</p>
+                    <p>Infinite Rooms was founded by director James Ballard in 2012 to deploy a research led model as
+                        a real-time application. The company is a small team with over 25 years of experience in
+                        educational technology with the aim of creating innovative dashboards and an engagement profile
+                        for every learner.</p>
                 </div>
             </div>
         </div>
