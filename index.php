@@ -156,7 +156,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-<style type="text/css"></style></head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
 
 <body id="page-top" class="index">
 
@@ -378,7 +379,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="title">Title</label>
 				  <div class="col-md-2">
-					<select id="title" name="title" class="form-control">
+					<select id="title" name="title" required class="form-control">
 					  <option></option>
 					  <option value="Ms">Ms</option>
 					  <option value="Mrs">Mrs</option>
@@ -394,7 +395,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="name">Name</label>  
 				  <div class="col-md-4">
-				  <input id="name" name="name" placeholder="Your Name" class="form-control input-md" required="" type="text">
+				  <input id="name" name="name" placeholder="Your Name" class="form-control input-md" required type="text">
 				  <span class="help-block">Please enter your full name</span>  
 				  </div>
 				</div>
@@ -403,7 +404,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="org">Institution</label>  
 				  <div class="col-md-4">
-				  <input id="org" name="org" placeholder="" class="form-control input-md" required="" type="text">
+				  <input id="org" name="org" placeholder="" class="form-control input-md" required type="text">
 				  <span class="help-block">Your institution (e.g. The University of Narnia)</span>  
 				  </div>
 				</div>
@@ -412,7 +413,7 @@
 				<div class="form-group">
 				<label class="col-md-4 control-label" for="email">Email address</label>
 				<div class="col-md-4">
-				<input id="email" name="email" placeholder="your.name@yourdomain.com" class="form-control input-md" required="" type="text" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}">
+				<input id="email" name="email" placeholder="your.name@yourdomain.com" class="form-control input-md" required type="email" pattern="[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}">
 				<span class="help-block">Please enter your Email address</span>  
 				</div>
 				</div>
@@ -421,7 +422,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="service">Service</label>
                     <div class="col-md-4">
-                        <select id="service" name="service" class="form-control">
+                        <select id="service" name="service" required class="form-control">
                             <option></option>
                             <option value="researcher">Researcher -- free</option>
                             <option value="inst_month">Institution -- £60 per month</option>
@@ -436,10 +437,7 @@
                 <div class="form-group">
                 <label class="col-md-4 control-label" for="email">captcha</label>
                 <div class="col-md-4">
-                <?php
-                    require_once 'securimage/securimage.php';
-                    echo Securimage::getCaptchaHtml();
-                ?>
+                    <div class="g-recaptcha" data-sitekey="6LdbWQETAAAAADZ3LSIia954aDDrF2ha7ZHhHzvK"></div>
                 </div>
                 </div>
 

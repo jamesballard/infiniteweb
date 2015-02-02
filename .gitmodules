@@ -1,3 +1,0 @@
-[submodule "securimage"]
-	path = securimage
-	url = https://github.com/dapphp/securimage.git

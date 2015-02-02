@@ -1,7 +1,33 @@
 <?php
 
+class GoogleRecaptcha {
+    /* Google recaptcha API url */
+    private $google_url = "https://www.google.com/recaptcha/api/siteverify";
+    private $secret = '6LdbWQETAAAAABF378Phhpu4Zmi0OTSthcdBETpS';
+
+    public function VerifyCaptcha($response) {
+        $url = $this->google_url."?secret=".$this->secret.
+            "&response=".$response;
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 15);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+        $curlData = curl_exec($curl);
+
+        curl_close($curl);
+
+        $res = json_decode($curlData, TRUE);
+        if($res['success'] == 'true')
+            return TRUE;
+        else
+            return FALSE;
+    }
+}
+
 require_once 'common.php';
-require_once 'securimage/securimage.php';
 
 // Code Validation
 if ($_REQUEST['email'] == null) {
@@ -9,35 +35,41 @@ if ($_REQUEST['email'] == null) {
 	exit;
 }
 
-$image = new Securimage();
-if ($image->check($_REQUEST['captcha_code']) == true) {
-    $db = database();
-    $stmt = $db->prepare('select * from signup where email = :email');
-    $stmt->execute(array(
-        'email' => $_REQUEST['email']
-    ));
+$response = $_REQUEST['g-recaptcha-response'];
 
-    $existing = $stmt->rowCount();
-    if(empty($existing)) {
-        $stmt = $db->prepare('insert into signup set org = :org, title = :title, name = :name,
-          email = :email, service = :service');
+if(!empty($response)) {
+    $cap = new GoogleRecaptcha();
+    $verified = $cap->VerifyCaptcha($response);
+
+    if($verified) {
+        $db = database();
+        $stmt = $db->prepare('select * from signup where email = :email');
         $stmt->execute(array(
-            'title' => $_REQUEST['title'],
-            'name' => $_REQUEST['name'],
-            'org' => $_REQUEST['org'],
-            'email' => $_REQUEST['email'],
-            'service' => $_REQUEST['service']
+            'email' => $_REQUEST['email']
         ));
-        header('Location: /thanks');
-        exit;
+
+        $existing = $stmt->rowCount();
+        if(empty($existing)) {
+            $stmt = $db->prepare('insert into signup set org = :org, title = :title, name = :name,
+      email = :email, service = :service');
+            $stmt->execute(array(
+                'title' => $_REQUEST['title'],
+                'name' => $_REQUEST['name'],
+                'org' => $_REQUEST['org'],
+                'email' => $_REQUEST['email'],
+                'service' => $_REQUEST['service']
+            ));
+            header('Location: /thanks');
+            exit;
+        } else {
+            header('Location: /registered');
+            exit;
+        }
     } else {
-        header('Location: /registered');
-        exit;
+        header('Location: /robot');
     }
-} else {
-    header('Location: /#signup');
-    exit;
 }
+
 
 
 
