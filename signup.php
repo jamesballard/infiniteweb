@@ -59,6 +59,13 @@ if(!empty($response)) {
                 'email' => $_REQUEST['email'],
                 'service' => $_REQUEST['service']
             ));
+            $to      = 'support@infiniterooms.co.uk';
+            $subject = 'New Signup: '.$_REQUEST['service'];
+            $message = $_REQUEST['title'].' '.$_REQUEST['name'].' ('.$_REQUEST['email'].') from '.$_REQUEST['org'];
+            $headers = 'From: webmaster@infiniterooms.co.uk' . "\r\n" .
+                'Reply-To: webmaster@infiniterooms.co.uk' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+            mail($to, $subject, $message, $headers);
             header('Location: /thanks');
             exit;
         } else {
@@ -66,7 +73,7 @@ if(!empty($response)) {
             exit;
         }
     } else {
-        header('Location: /robot');
+        header('Location: /robotp send emai');
     }
 }
 
