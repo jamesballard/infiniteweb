@@ -72,7 +72,8 @@ if(!empty($response)) {
                             'type' => 'to'
                         )
                     ),
-                    'headers' => array('Reply-To' => 'support@infiniterooms.co.uk')
+                    'headers' => array('Reply-To' => 'support@infiniterooms.co.uk'),
+                    'tags' => array('new-signup')
                 );
                 $result = $mandrill->messages->send($message);
             } catch(Mandrill_Error $e) {
