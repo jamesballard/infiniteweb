@@ -193,6 +193,9 @@
                     <li class="page-scroll">
                         <a href="/#about">About</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href="/app">Login</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -481,21 +484,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Infinite rooms is a startup company with the goal of promoting learner engagement through
-                        action driven metrics:
-                        <ul>
+                <div class="col-lg-2">
+                    <img src="docs/img/james_B.JPG" class="img-responsive img-circle pull-right img-profile" title="James Ballard" />
+                    <img src="docs/img/robert_E.JPG" class="img-responsive img-circle pull-right img-profile" title="Robert Egglestone" />
+                </div>
+                <div class="col-lg-4">
+                    <p>James Ballard began this project in 2011 as a post-grad dissertation at King's College London.
+                        After graduation James was joined by Robert Egglestone to deploy a research led model as
+                        a real-time application. Another colleague formed a team of 3, based in 3 countries (Australia,
+                        UK, and New Zealand) to build the application in their spare time using virtual hang-outs.
+                        Infinite Rooms turned into a company in 2013 to create innovative dashboards and an
+                        engagement profile for every learner.
+                        </p>
+                </div>
+                <div class="col-lg-4">
+                    <p> With over 25 years of experience in educational technology we hope that educators,
+                        technologists, researchers, and learners will join us on this journey and the site can become
+                        a self-funding research community. The initial questions we have posed ourselves include:
+                    <ul>
                         <li>What student actions are associated with more learning?</li>
                         <li>How might student activity help identify and promote effective teaching practices?</li>
                         <li>How do you assess effectiveness of learning technologies?</li>
                     </ul>
                     </p>
-                </div>
-                <div class="col-lg-4">
-                    <p>Infinite Rooms was founded by director James Ballard in 2012 to deploy a research led model as
-                        a real-time application. The company is a small team with over 25 years of experience in
-                        educational technology with the aim of creating innovative dashboards and an engagement profile
-                        for every learner.</p>
                 </div>
             </div>
         </div>
