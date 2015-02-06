@@ -29,6 +29,7 @@ class GoogleRecaptcha {
 
 require_once 'common.php';
 require_once 'mandrill/src/Mandrill.php';
+$mandrill = new Mandrill('tXUxwxWlFGL6wT6zEg7HuQ');
 
 // Code Validation
 if ($_REQUEST['email'] == null) {
@@ -53,12 +54,18 @@ if(!empty($response)) {
         if(empty($existing)) {
             $stmt = $db->prepare('insert into signup set org = :org, title = :title, name = :name,
       email = :email, service = :service');
+            $stmt->execute(array(
+                'title' => $_REQUEST['title'],
+                'name' => $_REQUEST['name'],
+                'org' => $_REQUEST['org'],
+                'email' => $_REQUEST['email'],
+                'service' => $_REQUEST['service']
+            ));
 
             $to      = 'support@infiniterooms.co.uk';
             $subject = 'New Signup: '.$_REQUEST['service'];
             $body = $_REQUEST['title'].' '.$_REQUEST['name'].' ('.$_REQUEST['email'].') from '.$_REQUEST['org'];
             try {
-                $mandrill = new Mandrill('tXUxwxWlFGL6wT6zEg7HuQ');
                 $message = array(
                     'html' => $body,
                     'text' => $body,
@@ -80,13 +87,40 @@ if(!empty($response)) {
                 // Mandrill errors are thrown as exceptions
                 error_log('A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage());
             }
-            $stmt->execute(array(
-                'title' => $_REQUEST['title'],
-                'name' => $_REQUEST['name'],
-                'org' => $_REQUEST['org'],
-                'email' => $_REQUEST['email'],
-                'service' => $_REQUEST['service']
-            ));
+
+            $to      = $_REQUEST['email'];
+            $subject = 'Infinite Rooms: Thanks for registering';
+            $html = '<p>Hi '.$_REQUEST['name'].'</p>';
+            $html .= '<p>Thank you for registering to <a href="https://infiniterooms.co.uk">Infinite Rooms</a>.';
+            $html .= 'We are currently setting up your account details and will contact you shortly.</p>';
+            $html .= '<p>Yours</p><p>James</p>';
+
+            $text = 'Hi '.$_REQUEST['name'].chr(10);
+            $text .= 'Thank you for registering to Infinite Rooms.';
+            $text .= 'We are currently setting up your account details and will contact you shortly.'.chr(10);
+            $text .= 'Yours'.chr(10).'James';
+            try {
+                $message = array(
+                    'html' => $html,
+                    'text' => $text,
+                    'subject' => $subject,
+                    'from_email' => 'support@infiniterooms.co.uk',
+                    'from_name' => 'James Ballard',
+                    'to' => array(
+                        array(
+                            'email' => $to,
+                            'name' => $_REQUEST['name'],
+                            'type' => 'to'
+                        )
+                    ),
+                    'headers' => array('Reply-To' => 'support@infiniterooms.co.uk'),
+                    'tags' => array('new-registration')
+                );
+                $result = $mandrill->messages->send($message);
+            } catch(Mandrill_Error $e) {
+                // Mandrill errors are thrown as exceptions
+                error_log('A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage());
+            }
             header('Location: /thanks');
             exit;
         } else {
