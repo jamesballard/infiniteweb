@@ -498,8 +498,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-2">
-                    <img src="docs/img/james_B.JPG" class="img-responsive img-circle pull-right img-profile" title="James Ballard" />
-                    <img src="docs/img/robert_E.JPG" class="img-responsive img-circle pull-right img-profile" title="Robert Egglestone" />
+                    <img src="docs/img/james_B.jpg" class="img-responsive img-circle pull-right img-profile" title="James Ballard" />
+                    <img src="docs/img/robert_E.jpg" class="img-responsive img-circle pull-right img-profile" title="Robert Egglestone" />
                 </div>
                 <div class="col-lg-4">
                     <p>James Ballard began this project in 2011 as a post-grad dissertation at King's College London.
