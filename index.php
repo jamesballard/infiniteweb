@@ -75,7 +75,7 @@
 			-moz-border-radius: 5px 5px;
 			-webkit-border-radius: 5px 5px;
 			border-radius: 5px 5px;
-			} 
+			}
 
 			.pricing-table-bronze  {
 			padding: 20px;
@@ -112,10 +112,25 @@
 			.pricing-table p {
 				padding-top: 0.4em;
 			}
-			.pricing th {
-				background: #2c3e50 !important;
+			.pricing .table > tbody > tr > th {
+				background: #2c3e50;
 				color: #FFFFFF;
+                vertical-align: bottom;
 			}
+
+            @media screen and (max-width: 450px) {
+                .pricing th.rotate {
+                    height: 90px;
+                    white-space: nowrap;
+                }
+
+                .pricing th.rotate > div {
+                    transform: translate(-5px, -3px) rotate(286deg);
+                    width: 30px;
+                }
+            }
+
+
 			.pricing-variable-height .plan {
 			float: none;
 			margin-left: 2%;
@@ -146,11 +161,11 @@
 			text-align: left;
 			}
 	</style>
-	
+
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -285,12 +300,13 @@
 			</div>
         </div>
 		<div class="row">
+            <div class="col-lg-12">
 				<table class="table table-striped" style="width: 80%; margin: 0 auto; margin-top: 3em;">
 				  <tr>
 					<th>Feature</th>
-					<th>Researcher</th>
-					<th>Institution</th>
-					<th>Enterprise<br></th>
+					<th class="rotate"><div><span>Researcher</span></div></th>
+					<th class="rotate"><div><span>Institution</span></div></th>
+					<th class="rotate"><div><span>Enterprise</span></div></th>
 				  </tr>
 				  <tr>
 					<td>Automated data import<br></td>
@@ -359,6 +375,7 @@
 					<td>&#x2714;</td>
 				  </tr>
 				</table>
+            </div>
 		</div>
         </div>
     </section>
@@ -497,23 +514,31 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-2">
-                    <img src="docs/img/james_B.jpg" class="img-responsive img-circle pull-right img-profile" title="James Ballard" />
-                    <img src="docs/img/robert_E.jpg" class="img-responsive img-circle pull-right img-profile" title="Robert Egglestone" />
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                            <img src="docs/img/james_B.jpg" class="img-responsive img-circle center-block img-profile"
+                                 title="James Ballard" />
+                        </div>
+                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                            <img src="docs/img/robert_E.jpg" class="img-responsive img-circle center-block img-profile"
+                                 title="Robert Egglestone" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <p>James Ballard began this project in 2011 as a post-grad dissertation at King's College London.
-                        After graduation James was joined by Robert Egglestone to deploy a research led model as
-                        a real-time application. Another colleague formed a team of 3, based in 3 countries (Australia,
-                        UK, and New Zealand) to build the application in their spare time using virtual hang-outs.
-                        Infinite Rooms turned into a company in 2013 to create innovative dashboards and an
-                        engagement profile for every learner.
-                        </p>
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-4">
+                    <p>Infinite Rooms is based on a research-led model that provides innovative dashboards and
+                        engagement data based on learner interactions with your technologies. The project began in 2011
+                        at King's College London where James Ballard was undertaking research as part of a
+                        post-graduate studies -- this project is the foundation for the application. After graduation James
+                        was joined by Robert Egglestone to deploy the system as a real-time application.
+                    </p>
                 </div>
-                <div class="col-lg-4">
-                    <p> With over 25 years of experience in educational technology we hope that educators,
-                        technologists, researchers, and learners will join us on this journey and the site can become
-                        a self-funding research community. The initial questions we have posed ourselves include:
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-0 col-lg-4">
+                    <p> This small team based in the UK and Australasia, represents over 25 years of experience in
+                        educational technology. Currently working as a start-up the aim is to engage educators,
+                        technologists, researchers, and learners and establish a community around engagement analytics.
+                        The initial questions we have posed ourselves include:
                     <ul>
                         <li>What student actions are associated with more learning?</li>
                         <li>How might student activity help identify and promote effective teaching practices?</li>
@@ -537,7 +562,7 @@
         </div>
     </footer>
 
-    <div class="scroll-top page-scroll visible-xs visble-sm">
+    <div class="scroll-top page-scroll">
         <a class="btn btn-primary" href="/#page-top">
             <i class="fa fa-chevron-up"></i>
         </a>
