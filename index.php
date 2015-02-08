@@ -278,21 +278,21 @@
 		<div class="pricing-table pricing-three-column row">
 			<div class="plan col-sm-4">
 			  <div class="plan-name-bronze">
-				<h2>Researcher</h2>
+				<h3>Researcher</h3>
 				<span>Free</span>
 			  </div>
 				<p>For individuals interested in exploring engagement and interacting  with data in new ways.</p>
 			</div>
 			<div style="z-index:5;" class="plan col-sm-4">
 			  <div class="plan-name-silver">
-				<h2>Institution</h2>
-				<span><span class="badge badge-warning">Buy 12 months for the price of 10!</span><br />&pound;600 per year<br/><br />OR<br />&pound; 60 per month</span>
+				<h3>Institution</h3>
+				<span><span class="badge badge-warning">Buy 12 months <br />for the<br /> price of 10!</span><br />&pound;600 per year<br/><br />OR<br />&pound; 60 per month</span>
 			  </div>
 			  <p>For institutions who want to map engagement data to their quality processes and initiatives.</p>
 			</div>
 			<div class="plan col-sm-4">
 			  <div class="plan-name-gold">
-				<h2>ENTERPRISE</h2>
+				<h3>ENTERPRISE</h3>
 				<span>On Request</span>
 			  </div>
 				<p>For institutions who want to integrate engagement profiles as part of a wider set of tools and metrics.</p>
@@ -517,11 +517,11 @@
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <div class="row">
                         <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <img src="docs/img/james_B.jpg" class="img-responsive img-circle center-block img-profile"
+                            <img src="docs/img/james_B.jpg" class="img-responsive img-rounded center-block img-profile"
                                  title="James Ballard" />
                         </div>
                         <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <img src="docs/img/robert_E.jpg" class="img-responsive img-circle center-block img-profile"
+                            <img src="docs/img/robert_E.jpg" class="img-responsive img-rounded center-block img-profile"
                                  title="Robert Egglestone" />
                         </div>
                     </div>
