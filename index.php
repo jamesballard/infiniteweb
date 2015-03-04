@@ -462,6 +462,10 @@
 				<div class="form-group">
 				<label class="col-md-4 control-label" for="submit"></label>
 				<div class="col-md-4">
+				<p>By clicking "submit" below you are agreeing to the <a href="privacy.html">Privacy</a> policy and the <a href="terms.html">Terms</a> and Conditions that govern this Service.</p>
+				<div>
+				</div>
+				<div class="col-md-4">
 				<button id="submit" name="submit" class="btn btn-primary">submit</button>
 				</div>
 				</div>
@@ -488,9 +492,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <ul class="list-inline">
-                        <li><a href="https://www.infiniterooms.co.uk/#" class="btn-social"><i class="fa fa-2x fa-fw fa-facebook"></i></a>
-                        </li>
                         <!--
+			<li><a href="https://www.infiniterooms.co.uk/#" class="btn-social"><i class="fa fa-2x fa-fw fa-facebook"></i></a>
+                        </li>
                         <li><a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                         </li> -->
                         <li><a href="https://twitter.com/infiniterooms" class="btn-social"><i class="fa fa-2x fa-fw fa-twitter"></i></a>
@@ -555,8 +559,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright © 2014 - 2015 Infinite Rooms Limited
+			Copyright &copy; 2011 - <?php echo date("Y") ?> <br />Infinite Rooms Limited
                     </div>
+		    <div class="col-lg-12">
+			<a href="privacy.html">Privacy</a> &#124; <a href="terms.html">Terms</a>
+		    </div>
                 </div>
             </div>
         </div>
